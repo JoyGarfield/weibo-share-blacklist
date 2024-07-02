@@ -80,7 +80,7 @@ function blockAll() {
     clearInterval(blockTimer)
     return
   }
-  const uid = lists.pop()
+  const {uid} = lists.pop()
   blockByUid(uid).then(() => successNum++).catch(() => failedNum++)
   .finally(() => {
     sendNtc()
